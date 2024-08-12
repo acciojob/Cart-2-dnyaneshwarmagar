@@ -25,7 +25,7 @@ const Cart = () => {
               >
                 +
               </button>
-              <span id="cart-amount-id">{item.amount}</span>
+              <span id="cart-amount-${item.id}">{item.amount}</span>
               <button
                 id={`decrement-btn-${item.id}`}
                 onClick={() => dispatch({ type: 'DECREMENT', payload: item.id })}
@@ -33,7 +33,7 @@ const Cart = () => {
                 -
               </button>
             </div>
-            <button onClick={() => dispatch({ type: 'REMOVE', payload: item.id })}>
+            <button id={`cart-item-remove-${item.id}`} onClick={() => dispatch({ type: 'REMOVE', payload: item.id })}>
               Remove
             </button>
           </li>
